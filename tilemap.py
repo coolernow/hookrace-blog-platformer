@@ -112,5 +112,8 @@ def load_tile_map(resources: Resources) -> Tuple[List[int], int, int]:
 
     # Objective 5: Load in tilemap
     # YOUR CODE HERE...
-
+    map_path = resources.get_path("default.map")
+    f = open("map_path", "r")
+    for line in f.readlines():
+        print(f.readline())
     return tiles, width, height

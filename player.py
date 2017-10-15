@@ -57,8 +57,8 @@ class Player:
         # 0--1--2--3--|--5--6--7--8--| <-- x-axis world (float)
         #             ^                <-- camera
         # YOUR CODE HERE...
-        x = 0
-        y = 0
+        x = int(self.pos.x - camera.x)
+        y = int(self.pos.y)
 
         # We need to cut up the player sheet into an array of tuples
         # The upper left is (0, 0). The total size is 256x128.
@@ -94,3 +94,5 @@ class Player:
 
         # Objective 4: Iterate over the body parts and render each one
         # YOUR CODE HERE...
+        for top,middle,bottom in body_parts:
+            renderer.copy(texture, top, middle, flip=bottom)
